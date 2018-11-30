@@ -1,0 +1,35 @@
+<app-content>
+
+ <button  type="button" class="btn btn-success" (click)="GotoPageCreate()">เพิ่มข้อมูล</button>
+ <br> <br>
+ <div class="tab-pane  p-20" id="profile7" role="tabpanel">
+ <table class="table table-striped table-bordered " id="myTable1"  >
+    <thead>
+      <tr>
+        <th >#</th> 
+        <th>คำนำหน้า</th>
+        <th>ชื่อ</th>
+        <th >นามสกุล</th>
+        <th >เพศ</th>
+        <th >อายุ</th>
+        <th >จัดการข้อมูล</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of itemProson.rs">  
+        <td>{{item.PERSION_CODE}}</td>
+        <td>{{item.INITIAL_CODE}}</td>
+        <td>{{item.NAME}}</td>
+        <td>{{item.LASTNAME}}</td>
+        <td>{{item.GENDER}}</td>
+        <td>{{item.AGE}}</td>
+        <td  width="23%">
+         <button type="button" class="btn btn-info">แก้ไข</button>
+         <button type="button" class="btn btn-danger">ลบ</button>
+         <button type="button" class="btn btn-warning"  [routerLink]="['/bmi',item.PERSION_CODE]" >คำนวณน้ำหนัก</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+ </div>
+</app-content>
